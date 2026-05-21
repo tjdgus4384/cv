@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.7in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -9,60 +9,90 @@
 \usepackage{fontawesome5}
 \setmainfont{Latin Modern Roman}
 
-\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1pt,parsep=0pt}
-
-\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titleformat{\section}
+  {\normalsize\scshape\bfseries}{}{0em}{}[\titlerule\vspace{2pt}]
+\titlespacing*{\section}{0pt}{8pt}{2pt}
 
 \setlength{\parindent}{0pt}
-
 \pagenumbering{gobble}
+
+% Custom bullets
+\setlist[itemize,1]{label=$\bullet$,leftmargin=1.2em,topsep=2pt,itemsep=2pt,parsep=0pt}
+\setlist[itemize,2]{label=$\circ$,leftmargin=1.2em,topsep=1pt,itemsep=1pt,parsep=0pt}
+
+% Entry command: name + right-aligned date, role + right-aligned location
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill \textit{#2} \\
+  \textit{#3} \hfill #4
+}
 
 \begin{document}
 
 \begin{center}
-{\Huge \textbf{Seonghyeon Yun}} \\[4pt]
-\href{mailto:tjdgus4384@snu.ac.kr}{tjdgus4384@snu.ac.kr} \quad $\cdot$ \quad
-\href{https://github.com/tjdgus4384}{\faGithub} \quad
-\href{https://www.linkedin.com/in/seonghyeon-yun-0096142a0}{\faLinkedin} \quad $\cdot$ \quad
+{\LARGE \textbf{Seonghyeon Yun}} \\[2pt]
+\href{mailto:tjdgus4384@snu.ac.kr}{tjdgus4384@snu.ac.kr} \quad $\vert$ \quad
+\href{https://github.com/tjdgus4384}{\faGithub\ tjdgus4384} \quad $\vert$ \quad
+\href{https://www.linkedin.com/in/seonghyeon-yun-0096142a0}{\faLinkedin\ Seonghyeon Yun} \\
 Seoul, South Korea
 \end{center}
 
 \section*{Education}
-\textbf{Seoul National University} \hfill Mar 2024 -- Jun 2028 (expected) \\
-B.S., Computer Science and Engineering
-
-\vspace{4pt}
-\textbf{Seoul Science High School} \hfill Mar 2021 -- Feb 2024
+\begin{itemize}
+  \item \entry{Seoul National University}{Mar.~2024 -- Jun.~2028 (expected)}{B.S.~in Computer Science and Engineering}{Seoul, Korea}
+  \item \entry{Seoul Science High School}{Mar.~2021 -- Feb.~2024}{High School diploma}{Seoul, Korea}
+\end{itemize}
 
 \section*{Research Experience}
-\textbf{Visual \& Geometric Intelligence Lab}, Seoul National University \hfill Mar 2026 -- Present \\
-\textit{Undergraduate Researcher} -- Advisor: Prof.~Jaesik Park
-
-\vspace{4pt}
-\textbf{TelePIX Co., Ltd.} \hfill Jan -- Feb 2026 \\
-\textit{AI Research Team, Cosmo Pioneers Fellowship} -- Seoul, South Korea
 \begin{itemize}
-  \item Worked on 3D reconstruction from sparse satellite imagery using Gaussian Splatting.
+  \item \entry{Agency for Defense Development (ADD)}{Spring 2028 -- Spring 2031 (expected)}{Research Officer, 12th Cohort, ROND Program}{Republic of Korea}
+  \begin{itemize}
+    \item ROND (Research Officers for National Defense): Korea's elite STEM officer program modeled after Israel's Talpiot. Selected cadets serve three years as commissioned officers conducting defense R\&D at ADD or affiliated institutes after undergraduate training and commissioning.
+  \end{itemize}
+
+  \item \entry{Visual \& Geometric Intelligence Lab, Seoul National University}{Mar.~2026 -- Present}{Undergraduate Researcher (Advisor: Prof.~Jaesik Park)}{Seoul, Korea}
+
+  \item \entry{TelePIX Co., Ltd.}{Jan.~-- Feb.~2026}{AI Research Team, Cosmo Pioneers Fellowship}{Seoul, Korea}
+  \begin{itemize}
+    \item Worked on 3D reconstruction from sparse satellite imagery using Gaussian Splatting.
+  \end{itemize}
 \end{itemize}
 
 \section*{Publications}
-\begin{enumerate}[leftmargin=*]
-  \item ``GeoGS: Geospatial Gaussian Splatting for Robust 3D Reconstruction from Sparse Satellite Imagery.'' \emph{CVPR 2026 EarthVision Workshop}. (Co-first author)
-\end{enumerate}
-
-\section*{Honors \& Awards}
 \begin{itemize}
-  \item 12th Cohort, Science \& Technology Reserve Officer Program, Ministry of Science and ICT, Republic of Korea \hfill 2025
+  \item ``GeoGS: Geospatial Gaussian Splatting for Robust 3D Reconstruction from Sparse Satellite Imagery.'' \emph{CVPR 2026 EarthVision Workshop}. (Co-first author)
+\end{itemize}
+
+\section*{Honors and Awards}
+\begin{itemize}
+  \item \textbf{ROND Cadet Scholarship} \hfill \textit{2025 -- Present} \\
+        \emph{Ministry of Science and ICT, Republic of Korea}
+        \begin{itemize}
+          \item $\sim$USD 4,000 per semester for tuition and stipends; awarded to selected national STEM officer cadets.
+        \end{itemize}
+  \item \textbf{Award, ``2050 \emph{Mirae-in}: AI and Our Lives'' Scenario Contest} \hfill \textit{2024} \\
+        \emph{Art Center Nabi \& Seoul National University AI Institute, AI ELSI Center} (team award)
+  \item \textbf{Outstanding Research Award (1st in Information Science Track), Creative Interdisciplinary Research} \hfill \textit{2022} \\
+        \emph{Seoul Science High School} -- Project: \emph{Multi-agent Reinforcement Learning for Grid Soccer using DQN}
+  \item \textbf{Certificate of Completion, International Olympiad in Informatics Summer School} \hfill \textit{2021} \\
+        \emph{Korea Information Science Society}
+  \item \textbf{Silver Award, National Finals, Korea Olympiad in Informatics (KOI)} \hfill \textit{2020}
+\end{itemize}
+
+\section*{Projects}
+\begin{itemize}
+  \item \textbf{ClassBridge} \hfill \href{https://github.com/tjdgus4384/ClassBridge}{[\faGithub]} \\
+        Real-time anonymous classroom communication tool. Instructors monitor student comprehension status via a desktop widget; students join via QR scan to signal understanding or submit anonymous questions.
+        \begin{itemize}
+          \item \textit{Stack:} TypeScript, Next.js, Tailwind CSS, Node.js, Socket.IO, Electron, Fly.io.
+        \end{itemize}
 \end{itemize}
 
 \section*{Skills}
-\textbf{Programming Languages:} Python, C++, TypeScript \\
-\textbf{Frameworks \& Tools:} PyTorch, Git, \LaTeX \\
-\textbf{Areas:} 3D Computer Vision, Gaussian Splatting / NeRF, Robot Learning, Machine Learning Theory \\
-\textbf{Languages:} Korean (native), English (fluent)
-
-\section*{Projects}
-\textbf{ClassBridge} \hfill \href{https://github.com/tjdgus4384/ClassBridge}{github.com/tjdgus4384/ClassBridge}
+\begin{itemize}
+  \item \textbf{Programming Languages:} Python, C++, TypeScript
+  \item \textbf{Frameworks/Tools:} PyTorch, Git, \LaTeX, Next.js, Socket.IO, Electron
+  \item \textbf{Areas:} 3D Computer Vision, Gaussian Splatting / NeRF, Robot Learning, Machine Learning Theory
+  \item \textbf{Languages:} Korean (native), English (TOEIC 940, expired)
+\end{itemize}
 
 \end{document}
