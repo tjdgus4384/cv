@@ -31,7 +31,7 @@
 
 \begin{center}
 {\LARGE \textbf{Seonghyeon Yun}} \\[2pt]
-\href{mailto:tjdgus4384@snu.ac.kr}{tjdgus4384@snu.ac.kr} \quad $\vert$ \quad
+% \href{mailto:tjdgus4384@snu.ac.kr}{tjdgus4384@snu.ac.kr} \quad $\vert$ \quad
 \href{https://github.com/tjdgus4384}{\faGithub\ tjdgus4384} \quad $\vert$ \quad
 \href{https://www.linkedin.com/in/seonghyeon-yun-0096142a0}{\faLinkedin\ Seonghyeon Yun} \\
 Seoul, South Korea
@@ -60,7 +60,7 @@ Seoul, South Korea
 \section*{Publications}
 \begin{itemize}
   \item \textbf{NL-ArgCheck: Natural-Language Argument Verification}. Self-driven research, Ongoing.
-  \item \textbf{GeoGS: Geospatial Gaussian Splatting for Robust 3D Reconstruction from Sparse Satellite \mbox{Imagery}}. Han-Gyeol Kim$^*$, \textbf{Seonghyeon Yun}$^*$, JaeWan Park, Darongsae Kwon. \emph{CVPR 2026 EarthVision Workshop}. ($^*$ equal contribution) \href{https://github.com/tjdgus4384/GeoGS}{[code]}
+  \item \textbf{GeoGS: Geospatial Gaussian Splatting for Robust 3D Reconstruction from Sparse Satellite \mbox{Imagery}}. Han-Gyeol Kim$^*$, \textbf{Seonghyeon Yun}$^*$, JaeWan Park, Darongsae Kwon. \emph{CVPR 2026 EarthVision Workshop} \textbf{(Best Paper Award)}. ($^*$ equal contribution) \href{https://github.com/tjdgus4384/GeoGS}{[code]}
 \end{itemize}
 
 \section*{Honors and Awards}
@@ -82,13 +82,13 @@ Seoul, South Korea
 
 \section*{Projects}
 \begin{itemize}
-  \item \textbf{Crypto-Market Quantitative Research}
+  \item \textbf{Aave V3 \& Morpho Blue Liquidation MEV Bot (Base)} \\
+        Same-block, oracle-driven liquidation bot for the Aave V3 and Morpho Blue lending protocols on Base L2, executed atomically via Balancer flash loans and a Uniswap V3 swap.
         \begin{itemize}
-          \item \textbf{Bittensor SN64 Mining Strategy}: dTAO emission modeling and single-GPU entry economics for the Chutes LLM-inference subnet.
-          \item \textbf{Meteora DAMM v2 LP Rotation (Solana)}: Smoothed fee-yield ranking with periodic capital rotation across DeFi liquidity pools.
-          \item \textbf{Aave / Morpho Liquidation Bot (Base)}: Health-factor monitoring with flash-loan execution.
-          \item \textbf{MEXC New-Listing Pump Capture}: Post-listing entry backtest across CeFi spot pairs.
-          \item \textbf{Pump.fun Meme-Coin ML Scanner (Solana)}: Real-time launch scanner with an ML paper trader.
+          \item \emph{Off-chain Chainlink \texttt{transmit()} predictor}: aggregated CEX mid (OKX + Coinbase WebSockets) drives a deviation/heartbeat trigger that anticipates on-chain oracle updates with $\sim$46\,s median lead, validated on a 30-day historical replay --- the only viable predict signal on Base, which exposes no public mempool.
+          \item \emph{On-chain forensics \& strategy correction}: established empirically that Base block ordering is concatenated flashblocks ($\sim$250\,ms sub-blocks), not a single global priority-fee sort, by analyzing per-tx ordering vs.\ effective priority on historical same-block races; refit the bidding model and priority ceiling accordingly.
+          \item \emph{Realistic profit backtest}: 121 same-block races / 7 days, \$76k gross weekly spread; competition-aware net (winner-identity model + crash-slippage stress + Uniswap V3 \texttt{QuoterV2} swap impact) projects \$53--74k/wk under static-incumbent assumptions.
+          \item \emph{Production hardening}: Foundry-tested Solidity \texttt{LiquidatorV1} (on-chain \texttt{minProfitWei} guard, owner-pausable kill switch); Python/\,asyncio engine with supervised workers, per-opportunity revert circuit breaker, multi-RPC failover, and a \texttt{setsid}-detached supervisor (auto-restart + cron \texttt{@reboot}) for unattended live operation.
         \end{itemize}
   \item \textbf{Parallel ARC-AGI Solver via Transductive LLMs and Rule-Based CPU Search} \\
         Team project, SNU Basics of Deep Learning (Spring 2025). Solving an easier subset of the \href{https://arcprize.org}{ARC-AGI} benchmark. Transductive Llama-3.1-8B (LoRA + Test-Time Training) running concurrently with rule-based hard-coded solutions.
